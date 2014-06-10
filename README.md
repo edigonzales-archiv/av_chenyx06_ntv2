@@ -23,3 +23,28 @@ Transformation mit NTv2
 Transformation mit CHENyx06
 ---------------------------
 Wird direkt in der GeoKettle-Vergleichstransformation gemacht.
+
+
+gdal_grid
+---------
+
+2592572.97,1213771.16 : xMax,yMax 2644719.18,1261330.18
+
+2592500 1213500 2645000 1261500
+
+52500 48000
+5250 4800
+2625 2400
+
+
+gdal_grid -a invdist:power=2.0:radius1=500:radius2=500:max_points=5 -txe 2592500 1213500 -tye 2645000 1261500 -outsize 5250 4800 -of GTiff -ot Int16 vergleich_chenyx06_ntv2.shp vergleich_chenyx06_ntv2.tiff
+
+```
+
+```
+
+
+```
+
+
+```

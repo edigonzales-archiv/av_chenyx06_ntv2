@@ -97,66 +97,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Fixpunkte QGIS NTv2</from><to>Sort rows NTv2</to><enabled>Y</enabled> </hop>  <hop> <from>Fixpunkte LV03</from><to>FreeFrame Plugin</to><enabled>Y</enabled> </hop>  <hop> <from>FreeFrame Plugin</from><to>Sort rows FreeFrame</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows NTv2</from><to>x&#47;y NTv2</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows FreeFrame</from><to>x&#47;y CHENyx06</to><enabled>Y</enabled> </hop>  <hop> <from>x&#47;y NTv2</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>x&#47;y CHENyx06</from><to>Merge Join</to><enabled>Y</enabled> </hop>  </order>
-  <step>
-    <name>Fixpunkte QGIS NTv2</name>
-    <type>GISFileInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filename>&#47;home&#47;stefan&#47;Projekte&#47;av_chenyx06_ntv2&#47;data&#47;LV95_ntv2&#47;fixpunkte_solothurn.shp</filename>
-    <isfilenameinfield>N</isfilenameinfield>
-    <filenamefield/>
-    <limit>0</limit>
-    <add_rownr>N</add_rownr>
-    <field_rownr/>
-    <gis_file_charset>UTF-8</gis_file_charset>
-    <passing_through_fields>N</passing_through_fields>
-    <accept_stepname/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>91</xloc>
-      <yloc>47</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows NTv2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <sort_size/>
-      <free_memory>25</free_memory>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>ogc_fid</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>237</xloc>
-      <yloc>49</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
+  <hop> <from>Fixpunkte QGIS NTv2</from><to>Sort rows NTv2</to><enabled>Y</enabled> </hop>  <hop> <from>Fixpunkte LV03</from><to>FreeFrame Plugin</to><enabled>Y</enabled> </hop>  <hop> <from>FreeFrame Plugin</from><to>Sort rows FreeFrame</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows NTv2</from><to>x&#47;y NTv2</to><enabled>Y</enabled> </hop>  <hop> <from>x&#47;y NTv2</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>x&#47;y CHENyx06</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows FreeFrame</from><to>Rename</to><enabled>Y</enabled> </hop>  <hop> <from>Rename</from><to>x&#47;y CHENyx06</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Join</from><to>Differenz</to><enabled>Y</enabled> </hop>  <hop> <from>Differenz</from><to>Add constants</to><enabled>Y</enabled> </hop>  <hop> <from>Add constants</from><to>m -&gt; mm</to><enabled>Y</enabled> </hop>  <hop> <from>m -&gt; mm</from><to>Fs</to><enabled>Y</enabled> </hop>  <hop> <from>Fs</from><to>Select values for xls</to><enabled>Y</enabled> </hop>  <hop> <from>Select values for xls</from><to>Sort rows Fs</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows Fs</from><to>Excel Output</to><enabled>Y</enabled> </hop>  <hop> <from>Fs</from><to>Select values for shape</to><enabled>Y</enabled> </hop>  <hop> <from>Select values for shape</from><to>Shapefile File Output</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Fixpunkte LV03</name>
     <type>GISFileInput</type>
@@ -178,8 +119,35 @@
     <accept_stepname/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>62</xloc>
-      <yloc>242</yloc>
+      <xloc>47</xloc>
+      <yloc>45</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Fixpunkte QGIS NTv2</name>
+    <type>GISFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filename>&#47;home&#47;stefan&#47;Projekte&#47;av_chenyx06_ntv2&#47;data&#47;LV95_ntv2&#47;fixpunkte_solothurn.shp</filename>
+    <isfilenameinfield>N</isfilenameinfield>
+    <filenamefield/>
+    <limit>0</limit>
+    <add_rownr>N</add_rownr>
+    <field_rownr/>
+    <gis_file_charset>UTF-8</gis_file_charset>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_stepname/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>49</xloc>
+      <yloc>250</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -200,8 +168,66 @@
 		<triangular_transformation_network>CHENyx06</triangular_transformation_network>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>220</xloc>
+      <xloc>205</xloc>
+      <yloc>46</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step1>x&#47;y NTv2</step1>
+<step2>x&#47;y CHENyx06</step2>
+    <keys_1>
+      <key>ogc_fid</key>
+    </keys_1>
+    <keys_2>
+      <key>ogc_fid_lv95</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>621</xloc>
       <yloc>243</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Rename</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>the_geom</name>
+        <rename>the_geom_lv95</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ogc_fid</name>
+        <rename>ogc_fid_lv95</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>tid</name>
+        <rename>tid_lv95</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>491</xloc>
+      <yloc>44</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -232,8 +258,77 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>359</xloc>
-      <yloc>241</yloc>
+      <xloc>344</xloc>
+      <yloc>44</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows NTv2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size/>
+      <free_memory>25</free_memory>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>ogc_fid</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>195</xloc>
+      <yloc>252</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>x&#47;y CHENyx06</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+var x_chenyx06 = the_geom_lv95.getCoordinate().x;
+var y_chenyx06 = the_geom_lv95.getCoordinate().y;
+</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>x_chenyx06</name>
+        <rename>x_chenyx06</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>y_chenyx06</name>
+        <rename>y_chenyx06</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>619</xloc>
+      <yloc>42</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -269,15 +364,15 @@ var y_ntv2 = the_geom.getCoordinate().y;
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>391</xloc>
-      <yloc>46</yloc>
+      <xloc>349</xloc>
+      <yloc>249</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>x&#47;y CHENyx06</name>
-    <type>ScriptValueMod</type>
+    <name>Differenz</name>
+    <type>Calculator</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -285,62 +380,163 @@ var y_ntv2 = the_geom.getCoordinate().y;
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <compatible>N</compatible>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-var x_chenyx06 = the_geom.getCoordinate().x;
-var y_chenyx06 = the_geom.getCoordinate().y;
-</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>x_chenyx06</name>
-        <rename>x_chenyx06</rename>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>y_chenyx06</name>
-        <rename>y_chenyx06</rename>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>556</xloc>
-      <yloc>230</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step1>x&#47;y NTv2</step1>
-<step2>x&#47;y CHENyx06</step2>
-    <keys_1>
-      <key>ogc_fid</key>
-    </keys_1>
-    <keys_2>
-      <key>ogc_fid</key>
-    </keys_2>
+       <calculation><field_name>dx_m</field_name>
+<calc_type>SUBTRACT</calc_type>
+<field_a>x_chenyx06</field_a>
+<field_b>x_ntv2</field_b>
+<field_c/>
+<field_d/>
+<field_e/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>dy_m</field_name>
+<calc_type>SUBTRACT</calc_type>
+<field_a>y_chenyx06</field_a>
+<field_b>y_ntv2</field_b>
+<field_c/>
+<field_d/>
+<field_e/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>629</xloc>
-      <yloc>130</yloc>
+      <xloc>620</xloc>
+      <yloc>364</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Rename</name>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>mm</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>1000</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>486</xloc>
+      <yloc>362</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>m -&gt; mm</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>dx</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>dx_m</field_a>
+<field_b>mm</field_b>
+<field_c/>
+<field_d/>
+<field_e/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>dy</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>dy_m</field_a>
+<field_b>mm</field_b>
+<field_c/>
+<field_d/>
+<field_e/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>340</xloc>
+      <yloc>362</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Fs</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>fs</field_name>
+<calc_type>COMBINATION_2</calc_type>
+<field_a>dx</field_a>
+<field_b>dy</field_b>
+<field_c/>
+<field_d/>
+<field_e/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>193</xloc>
+      <yloc>364</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values for xls</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -349,11 +545,303 @@ var y_chenyx06 = the_geom.getCoordinate().y;
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>        <select_unspecified>N</select_unspecified>
+    <fields>      <field>        <name>ogc_fid</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>tid</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>kategorie</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>nummer</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>hoehegeom</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>bfsnr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>x_ntv2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>y_ntv2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>x_chenyx06</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>y_chenyx06</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dx</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dy</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>fs</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>437</xloc>
-      <yloc>345</yloc>
+      <xloc>115</xloc>
+      <yloc>474</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>N</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#47;home&#47;stefan&#47;Projekte&#47;av_chenyx06_ntv2&#47;vergleich_chenyx06_ntv2</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Sheet1</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>ogc_fid</name>
+        <type>Integer</type>
+        <format>0</format>
+      </field>
+      <field>
+        <name>tid</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>kategorie</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>nummer</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>hoehegeom</name>
+        <type>Number</type>
+        <format>0.000</format>
+      </field>
+      <field>
+        <name>bfsnr</name>
+        <type>Integer</type>
+        <format>0</format>
+      </field>
+      <field>
+        <name>x_ntv2</name>
+        <type>Number</type>
+        <format>0.000</format>
+      </field>
+      <field>
+        <name>y_ntv2</name>
+        <type>Number</type>
+        <format>0.000</format>
+      </field>
+      <field>
+        <name>x_chenyx06</name>
+        <type>Number</type>
+        <format>0.000</format>
+      </field>
+      <field>
+        <name>y_chenyx06</name>
+        <type>Number</type>
+        <format>0.000</format>
+      </field>
+      <field>
+        <name>dx</name>
+        <type>Number</type>
+        <format>0</format>
+      </field>
+      <field>
+        <name>dy</name>
+        <type>Number</type>
+        <format>0</format>
+      </field>
+      <field>
+        <name>fs</name>
+        <type>Number</type>
+        <format>0</format>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>104</xloc>
+      <yloc>681</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows Fs</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size/>
+      <free_memory>25</free_memory>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>fs</name>
+        <ascending>N</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>110</xloc>
+      <yloc>575</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values for shape</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>ogc_fid</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>tid</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>kategorie</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>nummer</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>hoehegeom</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>bfsnr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>x_ntv2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>y_ntv2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>the_geom_lv95</name>
+        <rename>the_geom</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>x_chenyx06</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>y_chenyx06</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dx</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dy</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>fs</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>310</xloc>
+      <yloc>476</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Shapefile File Output</name>
+    <type>GISFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filename>&#47;home&#47;stefan&#47;Projekte&#47;av_chenyx06_ntv2&#47;vergleich_chenyx06_ntv2.shp</filename>
+    <isfilenameinfield>N</isfilenameinfield>
+    <filenamefield/>
+    <gis_file_charset>UTF-8</gis_file_charset>
+    <accept_stepname/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>313</xloc>
+      <yloc>629</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
