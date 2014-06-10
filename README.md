@@ -37,7 +37,9 @@ gdal_grid
 2625 2400
 
 
-gdal_grid -zfield fs -a invdist:power=2.0:radius1=500:radius2=500:max_points=5 -txe 2592500 1213500 -tye 2645000 1261500 -outsize 5250 4800 -of GTiff -ot Int16 -l vergleich_chenyx06_ntv2 vergleich_chenyx06_ntv2.shp vergleich_chenyx06_ntv2.tif
+gdal_grid -zfield fs -a invdist:power=2.0:radius1=500:radius2=500:max_points=5 -txe 2592500 2645000 -tye 1213500 1261500 -outsize 5250 4800 -of GTiff -ot Int16 -l vergleich_chenyx06_ntv2 vergleich_chenyx06_ntv2.shp vergleich_chenyx06_ntv2.tif
+
+gdal_grid -zfield fs -a invdist:power=2.0:radius1=500:radius2=500:max_points=5 -txe 2592500 2645000 -tye 1213500 1261500 -outsize 2625 2400 -of GTiff -ot Int16 -l vergleich_chenyx06_ntv2 vergleich_chenyx06_ntv2.shp vergleich_chenyx06_ntv2.tif
 
 ```
 
